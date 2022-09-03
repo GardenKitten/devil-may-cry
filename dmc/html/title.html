@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>title</title>
+
+
+
+  <style>
+    body {
+      background: url("../bgimg/backgroundimg02.jpg") no-repeat center center;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+      background-color: white;
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+    }
+
+    .V {
+      position: fixed;
+      left: 70px;
+      bottom: -5px;
+
+      z-index: 4;
+
+      width: auto;
+    }
+
+    .V img {
+      height: 420px;
+    }
+
+    .Griffon {
+      position: fixed;
+      right: 40px;
+      top: 30px;
+
+      z-index: 3;
+
+      width: auto;
+    }
+
+    .Griffon img {
+      height: 350px;
+    }
+
+    /* 背景 */
+    .menu {
+      height: 1000px;
+      width: 1000px;
+
+      z-index: 1;
+
+      position: fixed;
+      left: 270px;
+      top: 30px;
+
+      background: url(../img/menu02.png) no-repeat;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: 980px;
+      /* 让背景图基于容器大小伸缩 */
+      /* background-attachment: fixed; */
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+    }
+
+    /* 开场标题样式 */
+    .title {
+      font-family: 游明朝, ヒラギノ明朝, MSHGS明朝E;
+      font-weight: 500;
+      font-size: 110px;
+      line-height: 20px;
+
+      position: relative;
+      top: 90px;
+      left: 300px;
+
+      display: none;
+    }
+
+
+
+    /* 文字出现动画 */
+    .appear {
+      animation: splash 1.5s ease-out;
+      position: relative;
+    }
+
+    /* 文字动画实现 */
+    @keyframes splash {
+      from {
+        filter: blur(20px);
+        opacity: 0;
+        transform: scale(0.5, 0.5);
+      }
+
+      to {
+        filter: blur(0px);
+        opacity: 1;
+        transform: scale(1, 1);
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body>
+
+  <div class="box">
+    <div class="V">
+      <img src="../img/V02.png">
+    </div>
+    <div class="Griffon">
+      <img src="../img/Griffon.png">
+    </div>
+    <div class="menu">
+      <div class="title">
+        <p>教えて、</p>
+        <p>Vチャン！</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+<script src="../js/alert.js"></script>
+
+<script>
+  var title = document.querySelector('.title');
+
+  window.onload = function () {
+    setTimeout('alert("请使用浏览器全屏模式以获得最佳阅读体验")', 2000);
+
+    title.style.display = 'block';
+    title.classList.add("appear");
+
+
+    setTimeout('window.location.href = "menu.html"', 5000);
+    // setTimeout('menuAppear()', 0);
+  }
+
+  // function menuAppear() {
+
+  //   setTimeout('window.location.href = "menu.html"', 2000);
+  // }
+
+</script>
+
+</html>

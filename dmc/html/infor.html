@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game overview</title>
+
+  <script src="../js/alert.js"></script>
+
+  <style>
+    body {
+      background: url("../bgimg/bg_series.jpg") no-repeat center center;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+      background-color: white;
+      /* 设置背景颜色，背景图加载过程中会显示背景色 */
+
+      /* 取消所有margin和padding，让body贴着顶部 */
+      margin: 0;
+      padding: 0;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* logo大盒子 */
+    .logo-line {
+      display: flex;
+      flex-direction: row;
+
+      height: 160px;
+      width: 100%;
+
+    }
+
+    /* 单个logo的盒子 */
+    .logobox {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 15px;
+
+
+      padding-left: 35px;
+
+      width: 290px;
+
+      position: absolute;
+      top: 60px;
+    }
+
+    .logobox img {
+      height: 100px;
+
+      padding-left: 20px;
+    }
+
+
+    .infor {
+      /*把前两个参数设置为 0 ，阴影就会位于该元素的正后面*/
+      box-shadow: 0 0 15px 10px #fff;
+      background-color: rgba(255, 255, 255, 0.6);
+      /* 四个值: 第一个值为左上角，第二个值为右上角，第三个值为右下角，第四个值为左下角 */
+      border-radius: 15px;
+
+      height: 530px;
+      width: auto;
+
+      /* 滚动条 */
+      overflow-y: auto;
+
+      /* 字体设置  */
+      font: italic 35px Brush Script MT;
+      font-weight: lighter;
+      line-height: 45px;
+      text-indent: 2em;
+
+      /* 外边距 */
+      margin-top: 40px;
+      margin-bottom: 0px;
+      margin-right: 60px;
+      margin-left: 70px;
+
+      /* 内边距，调整滚动条与文字距离 */
+      padding-right: 20px;
+
+      padding-left: 30px;
+
+    }
+
+    /* 滚动条区域的宽度  */
+    .infor::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* 滚动槽的样式设置 */
+    .infor::-webkit-scrollbar-track {
+      background-color: rgba(78, 76, 225, 0.14);
+      box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.5);
+      border-radius: 150px;
+
+      /* height:90px; */
+    }
+
+    /* 滚动条滑块的样式设置 */
+    .infor::-webkit-scrollbar-thumb {
+      background-image: linear-gradient(180deg, #d0363674 0%, #708bd4a8 99%);
+      box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+      border-radius: 150px;
+
+      /* height:30px; */
+    }
+
+    .infor::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(255, 0, 0, 0.4);
+    }
+
+    .appear {
+
+    }
+
+    /* 动画类 */
+    .appear p {
+      color: transparent;
+
+      text-shadow: 0px 0px 0px black;
+
+      animation: move 2s linear;
+
+
+    }
+
+    /* 动画实现 */
+    @keyframes move {
+      50% {
+        transform: skew(-25deg) translate(-200%);
+
+        text-shadow: 0px 0px 50px;
+
+        opacity: 0;
+      }
+
+    }
+
+
+    /* 上边框样式 */
+    .border {
+      font: normal 25px "Noto Sans";
+      font-weight: lighter;
+
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 100%;
+      height: 50px;
+
+      background-color: #fff;
+
+      background-image: linear-gradient(to right, #d0363674, #708bd4a8);
+      background-size: 100% 100%;
+    }
+
+
+    .returnmenu {
+      width: 90%;
+      height: 100%;
+
+      position: relative;
+      left: 1%;
+      top: 0px;
+
+      display: flex;
+      align-items: center;
+    }
+
+
+    .returnmenu img {
+      width: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      /* 去除默认的下划线 */
+      color: grey;
+      /* 去除默认的颜色和点击后变化的颜色 */
+    }
+
+    /* 文字行间隔 */
+    p {
+      margin-block-start: 0.7em;
+      margin-block-end: 0.6em;
+    }
+  </style>
+
+  <script src="../js/alert.js"></script>
+
+</head>
+
+<body>
+
+  <!-- 上边框 -->
+  <div class="border">
+    <a href="menu.html">
+      <div class="returnmenu">
+        <img src="../img/sword2.png">
+        <span>Return</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- logo -->
+  <div class="logo-line">
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc5_main.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc4.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc2.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc1.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc3.png">
+    </div>
+  </div>
+
+
+  <!-- 文字 -->
+  <div class="infor">
+
+    <!-- 系列简介 -->
+    <div class="text">
+      <p>Devil May Cry is a series of action-adventure games created by Hideki Kamiya. It is primarily developed and
+        published by Capcom.
+        The series centers on the demon hunter Dante and his efforts to thwart various demon invasions of Earth.
+        Its gameplay consists of combat scenes in which the player must attempt to extend long chains of attacks,
+        avoiding
+        damage and exhibiting stylized combat;
+        this combat, along with time and the number of items collected and used, are considered in grading the player's
+        performance.
+        Across the series, new characters with unique skills are available.</p>
+      <p>The series has been successful; the main entries have sold several million copies and received Capcom's
+        Platinum
+        Title award. The success of the video-game series has led to comic books, novelizations, an animated series,
+        guides, collectibles, publications, and a variety of action figures. Critical response to the gameplay combos
+        has
+        been positive. However, the games' narrative was considered simple until the third installment.</p>
+    </div>
+
+    <!-- 五代 -->
+    <div class="text">
+      <p>
+        Devil May Cry 5 is a 2019 action-adventure game developed and published by Capcom. It is the sixth
+        installment overall and the fifth mainline installment in the Devil May Cry series. Capcom released it for
+        Microsoft Windows, PlayStation 4, and Xbox One on 8 March 2019. The game takes place five years after Devil May
+        Cry 4 and follows a trio of warriors with demonic powers, the returning Dante, Nero, and a new protagonist named
+        V, as they attempt to stop the Demon King Urizen from destroying the human world. Across their journey in Red
+        Grave City, the player can use these characters in different missions. Each of them has their own way of
+        fighting and becoming stronger. As this happens, the mystery behind V is revealed, along with his connection
+        with Urizen.
+      </p>
+
+      <p>
+        Devil May Cry 5 was directed by Hideaki Itsuno whose goal was for this installment to be his best work. He aimed
+        to balance the game for newcomers and returning gamers by providing various difficulties and challenges. Capcom
+        also wanted to bring a more realistic design inspired by the RE Engine used in their previous work, Resident
+        Evil 7: Biohazard. As a result, real-life people were used to make the character's faces. The plot was written
+        by returning writer Bingo Morihashi while the setting was based on various locations in London. Multiple
+        composers worked together to produce the game's audio, creating three main themes centered around the playable
+        characters.
+      </p>
+    </div>
+
+    <!-- 四代 -->
+    <div class="text">
+      <p>
+        Devil May Cry 4 is a 2008 action-adventure game developed and published by Capcom. It was released for the
+        PlayStation 3, Xbox 360, and Microsoft Windows platforms. It is the fourth installment in the Devil May Cry
+        series and is written by Bingo Morihashi and directed by Hideaki Itsuno. The story follows Nero, a man
+        possessing demonic powers who is on a mission to stop the series' main character, Dante, after he assassinates
+        the leader of the Order of the Sword. The player assumes the role of both Nero and Dante as they fight enemies
+        using their demonic powers and a variety of weapons.
+      </p>
+
+      <p>
+        Devil May Cry 4 is the first entry in the series to be released simultaneously for multiple consoles. During
+        its development, Capcom focused on each version achieving the same visual quality using the MT Framework game
+        engine. Around eighty people formed the team that created the game. Nero was introduced to attract the new
+        gamers. Dante's popularity with gamers proved challenging because the developers needed to use him as a
+        supporting character in the story.
+      </p>
+    </div>
+
+    <!-- 二代 -->
+    <div class="text">
+      <p>
+        Devil May Cry 2 is a 2003 action-adventure game developed and published by Capcom. It was released from
+        January to March, originally for the PlayStation 2. In terms of chronological order, the game's events are set
+        after Devil May Cry and prior to Devil May Cry 4.</p>
+      <p>
+        Set in modern times, in the fictional city of Vie de Marli, the story centers on Dante and Lucia in their
+        fight to stop a businessman named Arius from raising the demon Argosax and achieving supreme power. The story is
+        told primarily through a mixture of cutscenes using the game engine, with several pre-rendered full motion
+        videos.
+      </p>
+      <p>
+        Devil May Cry 2 received mixed reviews and has been criticized for a variety of development decisions, which
+        made the game considerably different from its predecessor; chief among these were the lowered difficulty and
+        changes to Dante's personality. Despite the mixed reception, Devil May Cry 2 was a commercial success.
+      </p>
+
+
+    </div>
+
+    <!-- 一代 -->
+    <div class="text">
+      <p>Devil May Cry is a 2001 action-adventure game developed by Capcom Production Studio 4 and published by
+        Capcom. Released from August to December, originally for the PlayStation 2, it is the first installment in the
+        Devil May Cry series. Set in modern times on the fictional Mallet Island, the story centers on Dante, a demon
+        hunter who uses his business to carry out a lifelong vendetta against all demons. He meets a woman named Trish
+        who takes him on a journey to defeat the demon lord Mundus, who is responsible for the deaths of Dante's brother
+        and mother. The story is told primarily through a mixture of cutscenes, which use the game engine and several
+        pre-rendered full motion videos. The game is very loosely based on the Italian poem Divine Comedy by the use of
+        allusions, including the game's protagonist Dante (named after Dante Alighieri) and other characters like Trish
+        (Beatrice Portinari) and Vergil (Virgil).</p>
+
+      <p>The game was originally conceived by Capcom developers as Resident Evil 4. Due to the staff feeling it would
+        not fit the Resident Evil franchise, the project became its own title. Several gameplay elements were also
+        inspired
+        by a bug found in Onimusha: Warlords. Devil May Cry received prominent coverage in the video game media due to
+        the impact it had in the action-adventure genre, its high difficulty, and the high overall scores given to it by
+        professional reviewers. The game has sold more than three million copies, spawned multiple sequels and a
+        prequel, and is considered among the greatest video games of all time.</p>
+    </div>
+
+    <!-- 三代 -->
+    <div class="text">
+      <p>
+        Devil May Cry 3: Dante's Awakening is a 2005 action-adventure game developed and published by Capcom. The game
+        is a prequel to the original Devil May Cry, featuring a younger Dante. Set a decade before the events of the
+        first Devil May Cry in an enchanted tower, Temen-ni-gru, the story centers on the dysfunctional relationship
+        between Dante and his brother Vergil. The game introduces combat mechanics with an emphasis on combos and
+        fast-paced action. The story is told primarily in cutscenes using the game's engine, with several pre-rendered
+        full motion videos.
+      </p>
+      <p>
+        After the mixed reception of Devil May Cry 2, Capcom developed Devil May Cry 3 in a similar manner to the
+        series'
+        more critically acclaimed first game Devil May Cry; its gameplay elements, such as environment size and battle
+        engine, were reexamined. Other aspects of Devil May Cry 2, such as the toning-down of Dante's cockiness and the
+        game's lack of difficulty, were brought back in line with Devil May Cry. According to a pre-release interview
+        with the game's producer, Tsuyoshi Tanaka, the focus of the game's design was a battle system which allowed a
+        player to control weapons in new, "stylish" ways. This coincided with the design of a new type of in-game camera
+        which kept the character in focus, avoiding disorientation in crowded battle scenes. Devil May Cry 2's
+        difficulty
+        was reduced for greater acceptance in the Japanese market, but this move cost the game support elsewhere. To
+        remedy this, the Japanese release of Devil May Cry 3 had a lower degree of difficulty than the North American
+        and
+        European releases and Dante was a younger, more arrogant character than he was in the previous games
+      </p>
+    </div>
+
+
+  </div>
+
+
+</body>
+
+<script>
+  var logo = document.querySelectorAll('#logo');
+  var logobox = document.querySelectorAll('.logobox');
+  var infor = document.querySelector('.infor');
+  var text = document.querySelector('.infor').querySelectorAll('.text');
+
+
+  // 记录被点击的logo
+  var flag = [false, false, false, false, false, false];
+
+  // 单击后改变文字，logo变大
+  for (var i = 0; i < logo.length; i++) {
+    logo[i].index = i;
+
+    logo[i].onclick = function () {
+
+      for (var j = 0; j < text.length; j++) {
+        text[j].style.display = 'none';
+      }
+      for (var k = 0; k < flag.length; k++) {
+        flag[k] = false;
+      }
+
+      restore();
+
+      var num = this.index;
+      text[num + 1].style.display = 'block';
+
+      infor.classList.add('appear');
+      this.style.paddingLeft = '0px';
+      this.style.height = '120px';
+      flag[num] = true;
+
+
+    }
+
+  }
+
+  // 鼠标经过logo变大
+  for (var i = 0; i < logo.length; i++) {
+    logo[i].onmouseover = function () {
+      this.style.paddingLeft = '0px';
+      this.style.height = '120px';
+    }
+  }
+
+  // 鼠标移开logo恢复
+  for (var i = 0; i < logo.length; i++) {
+    logo[i].index = i;
+    logo[i].onmouseout = function () {
+      if (!flag[this.index]) {
+        this.style.paddingLeft = '20px';
+        this.style.height = '100px';
+      }
+    }
+  }
+
+  // logo恢复
+  function restore() {
+    for (var i = 0; i < logo.length; i++) {
+      logo[i].style.paddingLeft = '20px';
+      logo[i].style.height = '100px';
+    }
+
+  }
+
+  // 打开网页时进行初始设置
+  window.onload = function () {
+    flag1 = true;
+
+    alert('选择上方的图标可以查看具体作品信息<br>Please click the icon above to view details')
+
+    if (flag1) {
+      //文字隐藏
+      for (var i = 1; i < text.length; i++) {
+        text[i].style.display = 'none';
+      }
+      // logo排列
+      for (var i = 0; i < logobox.length; i++) {
+        var index = 270 * i;
+        logobox[i].style.left = index + 'px';
+      }
+      flag1 = false;
+    }
+    else
+      return;
+  }
+
+
+</script>
+
+
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V</title>
+
+  <style>
+    body {
+      /* 背景 */
+      background: url("../bgimg/bg_v.jpg") no-repeat center center;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: cover;
+      -webkit-background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时,背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+      background-color: black;
+
+
+      /* 高度 */
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+
+      cursor: default;
+
+    }
+
+    /* 取消所有margin和padding,让body贴着顶部 */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 隐藏body滚动条 */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 高度 */
+    html {
+      height: 100%;
+    }
+
+
+    /* 上边框 */
+    .border {
+      font: normal 20px "Lucida Calligraphy";
+      font-weight: lighter;
+
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 100%;
+      height: 50px;
+
+      background-color: #fff;
+      background-image: linear-gradient(to left, black, rgb(106, 106, 106));
+      background-size: 100% 100%;
+    }
+
+    /* 返回图标样式 */
+    .returnmenu {
+      width: 20%;
+      height: 100%;
+
+      position: relative;
+      left: 1%;
+      top: 0px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    /* 返回图标样式 */
+    .returnmenu img {
+      width: 40px;
+    }
+
+    /* 去除<a>格式 */
+    a {
+      text-decoration: none;
+      /* 去除默认的下划线 */
+      color: rgba(255, 255, 255, 0.634);
+      /* 去除默认的颜色和点击后变化的颜色 */
+    }
+
+    /* 左侧人物盒子格式 */
+    .chara {
+      /* 字体 */
+      font-family: 'Imprint MT Shadow', serif;
+      font-size: 150px;
+
+      /* 位置 */
+      position: relative;
+      top: 50px;
+      left: 0px;
+
+      /* height: 100%; */
+      width: 40%;
+
+
+      /* background-color: rgba(0, 0, 0, 0.8); */
+    }
+
+    .name {
+      position: absolute;
+      top: 40px;
+      left: 60px;
+
+      background-image: linear-gradient(to right, #9e7f4c, 50%, #f1eec1, #716249);
+      background-size: 100% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
+      height: fit-content;
+      width: 140px;
+
+    }
+
+    /* 立绘 */
+    .chara-img {
+      position: absolute;
+      top: 60px;
+
+      padding-left: 10px;
+    }
+
+    .chara-img img {
+      width: 550px;
+    }
+
+    /* 信息大盒子 */
+    .infor {
+      position: absolute;
+      top: 15%;
+      left: 42%;
+
+      width: 55%;
+      height: 1690px;
+    }
+
+
+
+    /* 引用 */
+    .quote {
+      /* 字体 */
+      /* font-family: BIZ UDMincho Medium, serif;
+      font-size: 25px; */
+      /* color: #fff; */
+
+      /* 位置 */
+      position: absolute;
+      top: 0px;
+      left: 8%;
+
+      /* 布局 */
+      display: grid;
+      grid-template-columns: 50px 550px 50px;
+      grid-template-rows: 105px;
+      /* grid-gap: 10px; */
+      justify-items: center;
+
+
+
+    }
+
+    .quoet-mark {
+      font: bold italic 50px 'Bodoni MT';
+
+      /* 文字浮现 */
+      background-image: linear-gradient(to right, #9e7f4c, 50%, #f1eec1, #716249);
+      background-size: 100% 100%;
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
+    }
+
+    .quoet-text {
+      background-position-x: 0%;
+
+      grid-row: 1;
+      grid-column: 2;
+      font: 30px 'Centaur';
+      line-height: 45px;
+      color: #fff;
+
+      /* 实现浮上效果 */
+      background-image: linear-gradient(75deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 33.33%,
+          rgba(255, 255, 255, 0) 66.67%,
+          rgba(255, 255, 255, 0) 100%);
+      background-size: 300% 100%;
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+
+    /* 简述盒子 */
+    .preview-box {
+      color: #fff;
+
+      position: absolute;
+      top: 17%;
+      /* left:10px; */
+
+
+    }
+
+    /* 标题 */
+    .title {
+      font-size: 90px;
+      font-family: 'Imprint MT Shadow', serif;
+      text-align: center;
+
+      background-image: linear-gradient(to right, #9e7f4c, 50%, #f1eec1, #716249);
+      background-size: 100% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* 文字简介 */
+    .preview {
+      font: 19px 'Baskerville Old Face', serif;
+      line-height: 30px;
+      letter-spacing: 0.06rem;
+
+      padding-left: 5px;
+      padding-right: 170px;
+
+      background-position-x: 100%;
+    }
+
+    /* 滚动盒子 */
+    .roll {
+
+      /* 实现浮上效果 */
+      background-image: linear-gradient(75deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 33.33%,
+          rgba(255, 255, 255, 0) 66.67%,
+          rgba(255, 255, 255, 0) 100%);
+      background-size: 300% 100%;
+
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* 介绍详情 */
+    .intro-box {
+
+
+      position: absolute;
+      top: 48%;
+
+      height: fit-content;
+
+
+    }
+
+    /* 小标题 */
+    .subhead {
+      font-family: 'Baskerville Old Face', serif;
+      font-size: 60px;
+
+      background-image: linear-gradient(to right, #9e7f4c, 50%, #f1eec1, #716249);
+      background-size: 100% 100%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+
+
+      margin-bottom: 10px;
+    }
+
+    /* 正文 */
+    .text {
+      font-family: 'Arail', sans-serif;
+      font-size: 21px;
+      line-height: 1.6;
+      text-indent: 1em;
+      color: white;
+
+      padding-right: 30px;
+    }
+
+    /* 分割线 */
+    .hr {
+      width: 95%;
+      margin: 0 auto;
+      border: 0;
+      height: 6px;
+      /* background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0.2)); */
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));
+
+
+      float: left;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 上边框 -->
+  <div class="border">
+    <a href="menu.html">
+      <div class="returnmenu">
+        <img src="../img/v.png">
+        <span>Return</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="chara">
+    <div class="name">
+      <p>V</p>
+    </div>
+
+    <div class="chara-img">
+      <img src="../img/chara_v.png">
+    </div>
+  </div>
+
+  <!-- 信息大盒子 -->
+  <div class="infor">
+
+    <!-- 引用 -->
+    <div class="quote">
+      <div class="quoet-mark" style="grid-row: 1;grid-column: 1;align-self: start;">"</div>
+      <div class="quoet-text">' I have no name, I am
+        but two days old...' <br>&nbsp;&nbsp;&nbsp;Just kidding. You can call me "V."</div>
+      <div class="quoet-mark" style="grid-row: 1;grid-column: 3;align-self: end;">"</div>
+    </div>
+
+    <!-- 简述 -->
+    <div class="preview-box">
+      <!-- 大标题 -->
+      <p class="title">The Mysterious One</p>
+      <br><br><br>
+
+      <!-- 文字 -->
+      <div class="roll preview">
+        <p>
+          Book
+          and cane in
+          hand, this slender man appears covered in
+          impressive tattoos. Before chaos fell upon Red Grave
+          City, he sought out Dante through the information broker Morrison and tasked him to subdue a certain demon. V
+          lacks the power to fight himself, instead relying on three demon familiars to take the offensive in battle.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 介绍 -->
+    <div class="intro-box">
+
+      <!-- 介绍1 -->
+      <div class="intro" style="position: a;">
+        <!-- 小标题 -->
+        <div class="subhead">Personality</div>
+
+        <!-- 分割线 -->
+        <hr class="hr" /><br>
+
+        <!-- 正文 -->
+        <div class="text">
+          <p>In contrast to the more flamboyant Dante and hot-headed Nero, V is a quiet, calm, and relaxed individual.
+            While V is generally polite to everyone he meets, V is a man shrouded in mystery and does not speak more
+            than necessary, which caused Nero and the others to question if they can trust him. Due to being the human
+            half of Vergil, V possesses all of Vergil's knowledge of the Demon World and often reveals that he knows
+            things that no human should have knowledge of, but does not explain how he attained such information, which
+            only makes others more suspicious of him. Due to his odd appearance, behavior, and abilities, many people
+            often found V to be unsettling and have often questioned if V really is a normal human despite his frail
+            look. </p><br>
+          <p>A distinctive trait of V is his extreme fondness for poetry, as he often recites lines when speaking to
+            people or even enemies, and often by memory alone, to the point where Griffon calls him "Shakespeare" at one
+            point of the game. V greatly treasured his book of poems, as his original self, Vergil, possessed it since
+            he was a young boy. Keeping in line with his original self's
+            personality, V has a dry sense of humor and is not above jokes or finding antics around him amusing. While
+            first introducing himself to Dante quoting Infant Joy, V was being cheekily literal with Dante, as Vergil
+            used Yamato to split himself on May 1 and V met Dante on May 3; therefore, he has been alive for about two
+            days.</p>
+          <p></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</body>
+
+
+<script>
+
+  var roll = document.querySelector('.roll');
+  var quoteText = document.querySelector('.quoet-text');
+  var quoteMark = document.querySelectorAll('.quoet-mark');
+
+  windowAddMouseWheel();
+
+  function windowAddMouseWheel() {
+    var scrollFunc = function (e) {
+      e = e || window.event;
+      if (e.wheelDelta) {  //判断浏览器IE，谷歌滑轮事件
+        if (e.wheelDelta > 0) { //当滑轮向上滚动时
+          mouseUp();
+        }
+        if (e.wheelDelta < 0) { //当滑轮向下滚动时
+          mouseDown();
+        }
+      }
+      else if (e.detail) {  //Firefox滑轮事件
+        if (e.detail > 0) { //当滑轮向上滚动时
+          mouseUp();
+        }
+        if (e.detail < 0) { //当滑轮向下滚动时
+          mouseDown();
+        }
+      }
+
+    };
+
+
+    //给页面绑定滑轮滚动事件
+    if (document.addEventListener) { //火狐使用DOMMouseScroll绑定
+      document.addEventListener('DOMMouseScroll', scrollFunc, false);
+    }
+    //其他浏览器直接绑定滚动事件
+    window.onmousewheel = document.onmousewheel = scrollFunc;
+  }
+
+  //当滑轮向上滚动时
+  function mouseUp() {
+    // 内容消失
+    roll.style.backgroundPositionX = '100%';
+    roll.style.transition = '1s background-position-x ease-out';
+
+    // quote显示
+    quoteText.style.backgroundPositionX = '0%';
+    quoteText.style.transition = '2s background-position-x ease-in';
+
+    setTimeout('appear()', 1500);
+
+  }
+
+  //当滑轮向下滚动时
+  function mouseDown() {
+    // 内容显示
+    roll.style.backgroundPositionX = '0%';
+    roll.style.transition = '2s background-position-x ease-in';
+
+    // quote消失
+    quoteText.style.backgroundPositionX = '100%';
+    quoteText.style.transition = '1s background-position-x ease-out';
+
+    for (var i = 0; i < quoteMark.length; i++) {
+      quoteMark[i].style.display = 'none';
+    }
+  }
+
+  function appear() {
+    for (var i = 0; i < quoteMark.length; i++) {
+      quoteMark[i].style.display = 'block';
+    }
+  }
+
+</script>
+
+</html>

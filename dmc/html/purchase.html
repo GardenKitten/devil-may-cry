@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase</title>
+
+  <style>
+    body {
+      background: url("../bgimg/bg_purchase.jpg") no-repeat center center;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+      background-color: white;
+      /* 设置背景颜色，背景图加载过程中会显示背景色 */
+
+      /* 取消所有margin和padding，让body贴着顶部 */
+      margin: 0;
+      padding: 0;
+    }
+
+
+    /* logo大盒子 */
+    .logo-line {
+      display: flex;
+      flex-direction: row;
+
+      height: 140px;
+      width: 100%;
+
+      position: abosolute;
+      left: 0px;
+      top: 60px;
+
+    }
+
+    /* 单个logo的盒子 */
+    .logobox {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+
+
+      padding-left: 50px;
+
+      width: 290px;
+
+      position: absolute;
+      top: 60px;
+    }
+
+    .logobox img {
+      height: 100px;
+
+      padding-left: 20px;
+    }
+
+    /* 所有信息的大盒子 */
+    .inforbox {
+
+      height: auto;
+      width: auto;
+
+
+      /* 字体设置  */
+      font: normal 23px "Noto Sans";
+      font-weight: lighter;
+      line-height: 25px;
+
+      text-align: center;
+
+      /* 外边距 */
+      margin-top: 50px;
+      margin-bottom: 0px;
+      margin-right: 50px;
+      margin-left: 50px;
+
+      /* 内边距 */
+      padding-top: 35px;
+      padding-bottom: 0px;
+    }
+
+    /* 标签 */
+    .label {
+      color: rgb(156, 156, 156);
+
+      font-weight: normal;
+    }
+
+    /* 每一代信息的大盒子 */
+    .detail {
+      /* 浮动 */
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    /* 单个信息的盒子 */
+    .list {
+      width: 33%;
+      height: 10%;
+    }
+
+    /* 具体平台的盒子 */
+    .platform {
+      width: 100%;
+    }
+
+    /* 平台logo */
+    .platform-logo {
+      /* 浮动 */
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+    }
+
+    .platform-logo img {
+      height: 66px;
+    }
+
+    .platform-logo div {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+
+    /* 上边框样式 */
+    .border {
+      font: normal 25px "Noto Sans";
+      font-weight: lighter;
+
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 100%;
+      height: 50px;
+
+      background-color: #fff;
+      background-image: linear-gradient(to right, #d0363674, #708bd4a8);
+      background-size: 100% 100%;
+    }
+
+
+    .returnmenu {
+      width: 90%;
+      height: 100%;
+
+      position: relative;
+      left: 1%;
+      top: 0px;
+
+      display: flex;
+      align-items: center;
+    }
+
+
+    .returnmenu img {
+      width: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      /* 去除默认的下划线 */
+      color: grey;
+      /* 去除默认的颜色和点击后变化的颜色 */
+    }
+  </style>
+
+  <!-- 在新页面中打开链接  -->
+  <base target="_blank" />
+
+
+
+
+</head>
+
+<body>
+  <!-- 上边框 -->
+  <div class="border">
+    <a href="menu.html">
+      <div class="returnmenu">
+        <img src="../img/sword3.png">
+        <span>Return</span>
+      </div>
+    </a>
+  </div>
+
+
+  <!-- logo -->
+  <div class="logo-line">
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc5_main.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc4se.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc2.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc1.png">
+    </div>
+    <div class="logobox">
+      <img id="logo" src="../logo/logo_dmc3.png">
+    </div>
+  </div>
+
+
+
+
+  <!-- 详情 -->
+  <div class="inforbox">
+
+    <div class="first-page">
+      <p>
+        请选择上方的图标来查看具体作品信息，单击详情下方的平台图标可跳转至具体购买页面
+      </p>
+      <p>
+        Please click the icon above to view details
+      </p>
+    </div>
+
+
+    <!-- 5代 -->
+    <div id="appear">
+      <div class="detail">
+        <div class="list">
+          <p class="label">Release Date</p>
+          <p>09/21/2021</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Age Rating</p>
+          <p>Ages 17+</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Genre</p>
+          <p>Stylish Action</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Number of Players</p>
+          <p>1</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Languages</p>
+          <p>English, French (France), German, Italian, Japanese, Polish, Portuguese (Brazil), Russian, Spanish</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Copyright</p>
+          <p>©CAPCOM CO., LTD. 2019, 2020 ALL RIGHTS RESERVED.</p>
+        </div>
+
+        <div class="platform">
+          <p class="label">Platform</p>
+          <!-- 平台跳转 -->
+          <div class="platform-logo">
+            <!-- PlayStation -->
+            <div>
+              <a href="https://store.playstation.com/en-us/product/UP0102-CUSA08216_00-DMC5PVERBUNDLE01">
+                <img src="../img/PS5.png">
+              </a>
+            </div>
+
+            <!-- Steam -->
+            <div>
+              <a href="https://store.steampowered.com/agecheck/app/601150/">
+                <img src="../img/steam.png">
+              </a>
+            </div>
+
+            <!-- Xbox -->
+            <div>
+              <a href="https://www.xbox.com/en-us/games/store/devil-may-cry-5-vergil/9pc1d0103gff">
+                <img src="../img/xboxone.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 4代 -->
+    <div id="appear">
+      <div class="detail">
+        <div class="list">
+          <p class="label">Release Date</p>
+          <p>06/24/2015</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Age Rating</p>
+          <p>Ages 17+</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Genre</p>
+          <p>Stylish Action</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Number of Players</p>
+          <p>1</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Languages</p>
+          <p>English, French, Italian, German, Spanish, Japanese, Simplified Chinese, Traditional Chinese</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Copyright</p>
+          <p>©CAPCOM CO., LTD. 2008, 2015 ALL RIGHTS RESERVED.S</p>
+        </div>
+
+        <div class="platform">
+          <p class="label">Platform</p>
+          <!-- 平台跳转 -->
+          <div class="platform-logo">
+            <!-- PlayStation -->
+            <div>
+              <a href="https://store.playstation.com/en-us/product/UP0102-CUSA01671_00-MAINRDOBXXXX0000/">
+                <img src="../img/PS5.png">
+              </a>
+            </div>
+
+            <!-- Steam -->
+            <div>
+              <a href="https://store.steampowered.com/agecheck/app/329050/">
+                <img src="../img/steam.png">
+              </a>
+            </div>
+
+            <!-- Xbox -->
+            <div>
+              <a href="https://www.microsoft.com/zh-hk/p/devil-may-cry-4-special-edition/bpzt3cqccwkg?rtc=1">
+                <img src="../img/xboxone.png">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- 2代 -->
+    <div id="appear">
+      <div class="detail">
+        <div class="list">
+          <p class="label">Release Date</p>
+          <p>11/19/2019</p>
+        </div>
+
+        <div class="list">
+          <p class="label">ESRB Rating</p>
+          <p>Mature</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Genre</p>
+          <p>Action</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Number of Players</p>
+          <p>1</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Languages</p>
+          <p>Japanese, French, German, Italian, Spanish, Simplified Chinese, Traditional Chinese, American English</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Copyright</p>
+          <p>©CAPCOM CO., LTD. 2003, 2019 ALL RIGHTS RESERVED.</p>
+        </div>
+
+        <div class="platform">
+          <p class="label">Platform</p>
+          <!-- 平台跳转 -->
+          <div class="platform-logo">
+            <!-- SWITCH -->
+            <div>
+              <a href="https://www.nintendo.com/store/products/devil-may-cry-2-switch/">
+                <img src="../img/switch.png">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 1代 -->
+    <dis id="appear">
+      <div class="detail">
+        <div class="list">
+          <p class="label">Release Date</p>
+          <p>06/24/2019</p>
+        </div>
+
+        <div class="list">
+          <p class="label">ESRB Rating</p>
+          <p>Mature</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Genre</p>
+          <p>Action</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Number of Players</p>
+          <p>1</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Languages</p>
+          <p>Japanese, French, German, Italian, Spanish, Simplified Chinese, Traditional Chinese, American English</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Copyright</p>
+          <p>©CAPCOM CO., LTD. 2001, 2019 ALL RIGHTS RESERVED.</p>
+        </div>
+
+        <div class="platform">
+          <p class="label">Platform</p>
+          <!-- 平台跳转 -->
+          <div class="platform-logo">
+            <!-- SWITCH -->
+            <div>
+              <a href="https://www.nintendo.com/store/products/devil-may-cry-switch/">
+                <img src="../img/switch.png">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </dis>
+
+
+    <!-- 3代 -->
+    <div id="appear">
+      <div class="detail">
+        <div class="list">
+          <p class="label">Release Date</p>
+          <p>02/20/2020</p>
+        </div>
+
+        <div class="list">
+          <p class="label">ESRB Rating</p>
+          <p>Mature</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Genre</p>
+          <p>Action</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Number of Players</p>
+          <p>1-2</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Languages</p>
+          <p>Japanese, French, German, Italian, Spanish, Simplified Chinese, Traditional Chinese, American English</p>
+        </div>
+
+        <div class="list">
+          <p class="label">Copyright</p>
+          <p>©CAPCOM CO., LTD. 2005, 2020 ALL RIGHTS RESERVED.</p>
+        </div>
+
+        <div class="platform">
+          <p class="label">Platform</p>
+          <!-- 平台跳转 -->
+          <div class="platform-logo">
+            <!-- SWITCH -->
+            <div>
+              <a href="https://www.nintendo.com/store/products/devil-may-cry-3-special-edition-switch/">
+                <img src="../img/switch.png">
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+<script>
+
+  var logobox = document.querySelectorAll('.logobox');
+  var logo = document.querySelectorAll('#logo');
+  var detail = document.querySelectorAll('.detail');
+  var fristpage = document.querySelector('.first-page');
+  var appear = document.querySelectorAll('#appear');
+
+  // 记录被点击的logo
+  var flag = [false, false, false, false, false, false];
+
+  // 单击后改变文字，logo变大
+  for (var i = 0; i < logo.length; i++) {
+    logo[i].index = i;
+
+
+    logo[i].onclick = function () {
+
+      fristpage.style.display = 'none';
+
+      for (var j = 0; j < detail.length; j++) {
+        appear[j].style.display = 'none';
+      }
+      for (var k = 0; k < flag.length; k++) {
+        flag[k] = false;
+      }
+
+      restore();
+
+      var num = this.index;
+      appear[num].style.display = 'block';
+
+      // detail[num].classList.add('appear');
+      this.style.paddingLeft = '0px';
+      this.style.height = '120px';
+      flag[num] = true;
+
+    }
+
+  }
+
+  // 鼠标经过logo变大
+  for (var i = 0; i < logo.length; i++) {
+    logo[i].onmouseover = function () {
+      this.style.paddingLeft = '0px';
+      this.style.height = '120px';
+    }
+  }
+
+  // 鼠标移开logo恢复
+  for (var i = 0; i < logo.length; i++) {
+    logo[i].index = i;
+    logo[i].onmouseout = function () {
+      if (!flag[this.index]) {
+        this.style.paddingLeft = '20px';
+        this.style.height = '100px';
+      }
+    }
+  }
+
+  // logo恢复
+  function restore() {
+    for (var i = 0; i < logo.length; i++) {
+      logo[i].style.paddingLeft = '20px';
+      logo[i].style.height = '100px';
+    }
+
+  }
+
+  // 打开网页时进行初始设置
+  window.onload = function () {
+    flag1 = true;
+    if (flag1) {
+
+      // logo排列
+      for (var i = 0; i < logobox.length; i++) {
+        var index = 270 * i;
+        logobox[i].style.left = index + 'px';
+        appear[i].style.display = 'none';
+      }
+      flag1 = false;
+    }
+    else
+      return;
+  }
+
+
+</script>
+
+</html>

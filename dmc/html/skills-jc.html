@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Chain Judgement Cut</title>
+
+  <style>
+    /* 背景 */
+    body {
+      background: url("../bgimg/bg_skills02.jpg") no-repeat center center;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+      background-color: white;
+
+      /* 取消所有margin和padding，让body贴着顶部 */
+      margin: 0;
+      padding: 0;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* 高度 */
+    html,
+    body {
+      height: 100%;
+
+    }
+
+    /* 上边框 */
+    .border {
+      font: normal 25px "Noto Sans";
+      font-weight: lighter;
+
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 100%;
+      height: 50px;
+
+      background-color: #fff;
+      background-image: linear-gradient(to right, #d0363674, #708bd4a8);
+      background-size: 100% 100%;
+    }
+
+    .returnmenu {
+      width: 20%;
+      height: 100%;
+
+      position: relative;
+      left: 1%;
+      top: 0px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .returnmenu img {
+      width: 40px;
+    }
+
+    /* 去除<a>格式 */
+    a {
+      text-decoration: none;
+      /* 去除默认的下划线 */
+      color: grey;
+      /* 去除默认的颜色和点击后变化的颜色 */
+    }
+
+    /* 大盒子 */
+    .box {
+      width: 100%;
+      height: 600px;
+
+      position: relative;
+      left: 0px;
+      top: 50px;
+
+
+
+    }
+
+    /* 分割线 */
+    .hr {
+      width: 80%;
+      margin: 0 auto;
+      border: 0;
+      height: 4px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+      width: 80%;
+
+      position: absolute;
+      left: 10%;
+      top: 100px;
+    }
+
+    /* 标题 */
+    .title {
+      /* 字体设置  */
+      font-size: 45px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: bold;
+      text-shadow: 0 0 13px #000;
+      line-height: 40px;
+      letter-spacing: -2px;
+
+      text-align: center;
+
+      /* 位置 */
+      position: relative;
+
+      top: 28px;
+    }
+
+    /* 内容大盒子 */
+    .content {
+      width: 100%;
+      height: auto;
+
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* 文本 */
+    .text {
+      /* 字体 */
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 25px;
+      font-weight: lighter;
+
+      line-height: 45px;
+      text-indent: 1em;
+
+      /*把前两个参数设置为 0 ，阴影就会位于该元素的正后面*/
+      box-shadow: 0 0 15px 10px #fff;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 15px;
+
+      /* 布局 */
+      width: 50%;
+      height: auto;
+
+      position: relative;
+      left: 6%;
+      top: 130px;
+
+      margin-bottom: 45px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* 视频 */
+    .videobox {
+      position: relative;
+      top: 130px;
+      left: 11%;
+
+      width: 450px;
+      height: auto;
+
+      font-family: "Noto Sans", 宋体;
+      font-size: 12px;
+      font-weight: lighter;
+      line-height: 10px;
+      color: rgb(122, 122, 122);
+      text-align: center;
+    }
+
+    /* 文字行距 */
+    p {
+      margin-block-start: 0.8em;
+      margin-block-end: 0.8em;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+  <!-- 上边框 -->
+  <div class="border">
+    <a href="menu.html">
+      <div class="returnmenu">
+        <img src="../img/gun1.png">
+        <span>Return</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- 内容大盒子 -->
+  <div class="box">
+    <!-- 标题 -->
+    <div class="title">
+      How to Chain Judgement Cut
+    </div>
+
+    <!-- 分割线 -->
+    <hr class="hr" />
+
+
+    <div class="content">
+      <!-- 文本 -->
+      <div class="text">
+        <p>Judgement Cut is one of player Vergil's starting abilities. It can follow any attack or taunt involving
+          Yamato, can be performed both on the ground and in mid-air, and has a long range.</p>
+        <p>It can be executed with perfect timing, for this the button must be released just as the scabbard starts
+          sparkling after an attack, dash, or the sword sheathing. Perfect Cut execution window is slightly longer in
+          the air.</p>
+        <p> Perfect Judgement Cuts can be performed in quick
+          succession up to 3 times, with the 3rd perfect Cut being indicated by Vergil's "Jackpot". To do it, To do it,
+          perform a Judgement Cut by holding and releasing the attack button. AS soon as you release it, immediately
+          holdit down for a bit and release it again, rinse and repeat.
+          Under normal circumstances the maximum number of consecutive Judgement
+          Cuts is 4 (a normal one followed by 3 perfect Cuts), however, by cancelling the string with Enemy Step or
+          Trick Action before the 3rd Cut is out, it is possible to keep performing consecutive Cuts indefinitely, while
+          staying in the air. </p>
+      </div>
+
+      <!-- 视频 -->
+      <div class="videobox">
+        <video src="../video/jc.mp4" muted controls="controls" autoplay="autoplay" loop="loop" width="450px"></video>
+        <p>a normal jc followed by 3 perfect cuts</p><br><br>
+
+        <video src="../video/sdt-jc.mp4" muted controls="controls" autoplay="autoplay" loop="loop"
+          width="450px"></video>
+        <p>Sin Devil Trigger version</p><br><br>
+
+        <video src="../video/jc-infinity.mp4" muted controls="controls" autoplay="autoplay" loop="loop"
+          width="450px"></video>
+        <p>Judgement Cut * n</p><br><br>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+</body>
+
+<script>
+
+</script>
+
+
+</html>

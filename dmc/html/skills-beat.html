@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to beat Scissors</title>
+
+
+  <style>
+    /* 背景 */
+    body {
+      background: url("../bgimg/bg_skills.jpg") no-repeat center center;
+      /*加载背景图*/
+      /* 背景图不平铺 */
+      background-size: cover;
+      /* 让背景图基于容器大小伸缩 */
+      background-attachment: fixed;
+      /* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+      /* 此条属性必须设置否则可能无效 */
+      background-color: white;
+
+      /* 取消所有margin和padding，让body贴着顶部 */
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 隐藏body滚动条 */
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+
+    /* 高度 */
+    html,
+    body {
+      height: 100%;
+    }
+
+    /* 上边框 */
+    .border {
+      font: normal 25px "Noto Sans";
+      font-weight: lighter;
+
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+      width: 100%;
+      height: 50px;
+
+      background-color: #fff;
+      background-image: linear-gradient(to right, #d0363674, #708bd4a8);
+      background-size: 100% 100%;
+    }
+
+    .returnmenu {
+      width: 20%;
+      height: 100%;
+
+      position: relative;
+      left: 1%;
+      top: 0px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .returnmenu img {
+      width: 40px;
+    }
+
+    /* 去除<a>格式 */
+    a {
+      text-decoration: none;
+      /* 去除默认的下划线 */
+      color: grey;
+      /* 去除默认的颜色和点击后变化的颜色 */
+    }
+
+    /* 大盒子 */
+    .box {
+      width: 100%;
+      /* height: 600px; */
+
+      position: relative;
+      left: 0px;
+      top: 50px;
+
+
+    }
+
+    /* 分割线 */
+    .hr {
+      width: 80%;
+      margin: 0 auto;
+      border: 0;
+      height: 4px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+
+      width: 80%;
+
+      position: absolute;
+      left: 10%;
+      top: 100px;
+    }
+
+    /* 标题 */
+    .title {
+      /* 字体设置  */
+      font-size: 45px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: bold;
+      text-shadow: 0 0 13px #000;
+      line-height: 40px;
+      letter-spacing: -2px;
+
+      text-align: center;
+
+      /* 位置 */
+      position: relative;
+
+      top: 28px;
+    }
+
+    /* 内容大盒子 */
+    .content {
+      width: 100%;
+      /* height: auto; */
+
+      display: flex;
+      flex-direction: row;
+    }
+
+    /* 文本 */
+    .text {
+      /* 字体 */
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 25px;
+      font-weight: 300;
+
+      line-height: 40px;
+      text-indent: 1em;
+
+      /*把前两个参数设置为 0 ，阴影就会位于该元素的正后面*/
+      box-shadow: 0 0 15px 10px #fff;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 15px;
+
+      /* 布局 */
+      width: 50%;
+      /* height: auto; */
+
+      position: relative;
+      left: 6%;
+      top: 130px;
+
+      margin-bottom: 105px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    /* 视频 */
+    .videobox {
+      position: relative;
+      top: 130px;
+      left: 11%;
+
+      width: 450px;
+      height: auto;
+
+      font-family: "Noto Sans", 宋体;
+      font-size: 10px;
+      font-weight: lighter;
+      line-height: 10px;
+      color: rgb(122, 122, 122);
+      text-align: center;
+
+      margin-bottom: 40px;
+    }
+
+    p {
+      margin-block-start: 0.7em;
+      margin-block-end: 0.7em;
+    }
+  </style>
+
+</head>
+
+
+
+<body>
+
+  <!-- 上边框 -->
+  <div class="border">
+    <a href="menu.html">
+      <div class="returnmenu">
+        <img src="../img/sword1.png">
+        <span>Return</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- 内容大盒子 -->
+  <div class="box">
+    <!-- 标题 -->
+    <div class="title">
+      How to beat Death Scissors
+    </div>
+
+    <!-- 分割线 -->
+    <hr class="hr" />
+
+
+    <div class="content">
+      <!-- 文本 -->
+      <div class="text">
+        <p>Death Scissors is an enemy appears in Devil May Cry 5, they can fly, travel through walls, and are immune to
+          all attacks except those aimed at their heads.</p>
+        <p>True to their name, Scissors use a pair of rusted scissors to tear and clip at their foes. Their shears,
+          which acting like a layer of armor, can be destroyed by attacking them.</p>
+        <p>Death Scissors utilize wide swinging attacks that can interrupt the player's offense and catch them off
+          guard. They can also teleport to appear beneath the character to perform a surprise attack. When their faces
+          are surrounded by a red aura (when their attacks are parried or their weapon is destroyed),
+          Death Scissors can be destroyed with a single attack, no matter if it's melee or ranged, hence shooting them
+          in that state is the best way of dealing with them.</p>
+        <p>They have several main attacks: their most distinctive is when they hover close, slowly open their scissors
+          and then snap them closed with a short lunge. They can also twirl their scissors which they commonly do as a
+          counter, or perform a turning cut with their scissors which is harder to counter. At long range, they will
+          hold their scissors out in front of them and start to rotate, then charge forward in a drill attack, which
+          they can repeat several times sequentially, often passing in and out of walls to take the player by surprise.
+          All of their attacks are preceded by a sound cue, either demonic laughter or a whimper-like sound.</p>
+        <p>The easiest time to parry is the first. During this animation, the blades of the scissors will gleam white
+          when they are almost fully open: a melee hit after this gleam will count as a parry and place them in their
+          vulnerable state. </p>
+      </div>
+
+      <!-- 视频 -->
+      <div class="videobox">
+        <video src="../video/nero.mp4" muted controls="controls" autoplay="autoplay" loop="loop" width="450px"></video>
+        <p>Nero</p>
+        <p>a single shot with Blue Rose will kill them just as easily
+        </p> <br><br>
+
+
+        <video src="../video/v.mp4" muted controls="controls" autoplay="autoplay" loop="loop" width="450px"></video>
+        <p>V</p>
+        <p>can finish them any time their red aura appears</p><br> <br>
+
+
+        <video src="../video/dante.mp4" muted controls="controls" autoplay="autoplay" loop="loop" width="450px"></video>
+        <p>Dante</p>
+        <p>encouraged to use fast attacks</p><br><br>
+
+        <video src="../video/vergil.mp4" muted controls="controls" autoplay="autoplay" loop="loop"
+          width="450px"></video>
+        <p>Vergil</p>
+        <p>Beowulf and Yamato can stun them</p><br> <br>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>
