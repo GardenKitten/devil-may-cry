@@ -7,4 +7,4 @@
   英文文本来源：<br>
   Fandom wiki：https://devilmaycry.fandom.com/wiki/Devil_May_Cry_Wiki<br>
   Wikipedia：https://www.wikipedia.org/<br>
-  提示弹窗的js代码和下滑浮现部分的css代码都有参考，但时间太久了已经找不到来源，实在抱歉
+  提示弹窗的js代码和文字下滑浮现部分的css代码都有参考，但时间太久了已经找不到来源，实在抱歉
