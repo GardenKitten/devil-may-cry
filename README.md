@@ -1,4 +1,4 @@
-大一下web前端大作业  
+web前端大作业  
 预览：http://htmlpreview.github.io/?https://github.com/GardenKitten/devil-may-cry/blob/main/dmc/html/title.html  
 所有素材来自官方及游戏内录制  
   
